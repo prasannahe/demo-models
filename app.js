@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// use localhost:3000/users to see results. run migrations before https://itnext.io/express-knex-objection-painless-api-with-db-74512c484f0c
 app.use('/', indexRouter);
 app.get('/users', (req, res) => {
   User.query()
